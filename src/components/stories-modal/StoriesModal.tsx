@@ -22,8 +22,12 @@ const StoriesModal = ({ slides, initialIndex, onClose }: Props) => {
   const startedAtRef = useRef<number | null>(null);
   const rafRef = useRef<number | null>(null);
 
+  // пауза таймера во время свайпа
+  const pausedRef = useRef(false);
+  const elapsedRef = useRef(0);
+
   const tick = useCallback(() => {
-    if (startedAtRef.current === null) return;
+    if (startedAtRef.current === null || pausedRef.current) return;
     const elapsed = Date.now() - startedAtRef.current;
     const p = Math.min(1, elapsed / DURATION_MS);
     setProgress(p);
@@ -35,12 +39,38 @@ const StoriesModal = ({ slides, initialIndex, onClose }: Props) => {
     rafRef.current = requestAnimationFrame(tick);
   }, []);
 
-  const restartTimer = useCallback(() => {
+  const startRaf = useCallback(() => {
     if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    startedAtRef.current = Date.now();
-    setProgress(0);
     rafRef.current = requestAnimationFrame(tick);
   }, [tick]);
+
+  const pauseTimer = useCallback(() => {
+    if (pausedRef.current) return;
+    pausedRef.current = true;
+    if (startedAtRef.current !== null) {
+      elapsedRef.current = Math.min(
+        DURATION_MS,
+        Date.now() - startedAtRef.current
+      );
+    }
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+  }, []);
+
+  const resumeTimer = useCallback(() => {
+    if (!pausedRef.current) return;
+    pausedRef.current = false;
+    startedAtRef.current = Date.now() - elapsedRef.current;
+    startRaf();
+  }, [startRaf]);
+
+  const restartTimer = useCallback(() => {
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    pausedRef.current = false;
+    elapsedRef.current = 0;
+    startedAtRef.current = Date.now();
+    setProgress(0);
+    startRaf();
+  }, [startRaf]);
 
   const onSlideChange = useCallback(() => {
     const swiper = swiperRef.current?.swiper;
@@ -64,12 +94,17 @@ const StoriesModal = ({ slides, initialIndex, onClose }: Props) => {
     document.body.style.overflow = 'hidden';
     restartTimer();
     window.addEventListener('keydown', handleKey);
+
+    const onVis = () => (document.hidden ? pauseTimer() : resumeTimer());
+    document.addEventListener('visibilitychange', onVis);
+
     return () => {
       document.body.style.overflow = '';
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       window.removeEventListener('keydown', handleKey);
+      document.removeEventListener('visibilitychange', onVis);
     };
-  }, [handleKey, restartTimer]);
+  }, [handleKey, restartTimer, pauseTimer, resumeTimer]);
 
   const timers = useMemo(
     () =>
@@ -118,6 +153,9 @@ const StoriesModal = ({ slides, initialIndex, onClose }: Props) => {
               slidesPerView={1}
               loop={true}
               onSlideChange={onSlideChange}
+              onTouchStart={pauseTimer}
+              onTouchMove={pauseTimer}
+              onTouchEnd={resumeTimer}
               className={styles.storiesModal__slider}
             >
               {slides?.map((s) => (
