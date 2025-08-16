@@ -11,6 +11,7 @@ import { Product } from '@/app/page';
 import styles from './Popular.module.scss';
 import ArrowIcon from '@/components/ArrowIcon';
 import { useCartStore } from '@/store/cart';
+import Link from 'next/link';
 
 type QtyMap = Record<number, number> & Record<string, number>;
 
@@ -83,7 +84,9 @@ const Popular = ({ data }: { data: Product[] }) => {
               <Image src={p.img} alt={p.title} width={100} height={100} />
             </div>
             <div className={styles.popular__info}>
-              <h3 className={styles.popular__product_title}>{p.title}</h3>
+              <Link href="#" className={styles.popular__product_title}>
+                {p.title}
+              </Link>
               <div className={styles.popular__price}>{p.price} zł</div>
             </div>
             <div className={styles.popular__qty}>
