@@ -153,6 +153,7 @@ const StoriesModal = ({ slides, initialIndex, onClose }: Props) => {
               slidesPerView={1}
               loop={true}
               onSlideChange={onSlideChange}
+              followFinger={false}
               onTouchStart={pauseTimer}
               onTouchMove={pauseTimer}
               onTouchEnd={resumeTimer}
