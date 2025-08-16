@@ -1,0 +1,63 @@
+.stories {
+  margin-bottom: 40px;
+  &__slider {
+    overflow: visible;
+    width: 100%;
+  }
+  &__slide {
+    position: relative;
+    width: 128px;
+    height: 210px;
+    border-radius: 8px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__title {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    font-weight: 600;
+    line-height: 140%;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -3%;
+    color: var(--color-white);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .stories {
+    &__slide {
+      width: 201px;
+      height: 330px;
+      border-radius: 16px;
+    }
+    &__title {
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      line-height: 120%;
+      font-size: 20px;
+    }
+  }
+}
+@media screen and (min-width: 1280px) {
+  .stories {
+    &__slide {
+      width: 274px;
+      height: 450px;
+      border-radius: 24px;
+    }
+    &__title {
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      font-size: 28px;
+    }
+  }
+}

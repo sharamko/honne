@@ -1,95 +1,81 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Popular from '@/sections/popular/Popular';
+import Stories from '@/sections/stories/Stories';
+
+export type Story = {
+  id: number;
+  title: string;
+  img: string;
+  button?: string;
+};
+export type Product = {
+  id: number;
+  title: string;
+  img: string;
+  price: string;
+};
+
+const stories: Story[] = [
+  {
+    id: 1,
+    title: 'egzotyczna kropla',
+    img: '/images/honne-story-1.png',
+    button: 'Получить скидку',
+  },
+  {
+    id: 2,
+    title: 'nowy kod promocyjny',
+    img: '/images/honne-story-2.png',
+  },
+  {
+    id: 3,
+    title: 'Światło w Filadelfii, nowe',
+    img: '/images/honne-story-3.png',
+    button: 'Акция',
+  },
+  {
+    id: 4,
+    title: 'pieczone szczęście',
+    img: '/images/honne-story-4.png',
+  },
+  {
+    id: 5,
+    title: 'idealny obiad dla dwojga',
+    img: '/images/honne-story-5.png',
+    button: 'Получить скидку',
+  },
+];
+const products: Product[] = [
+  {
+    id: 1,
+    title: 'классическая филадельфия',
+    img: '/images/honne-product-1.png',
+    price: '40',
+  },
+  {
+    id: 2,
+    title: 'филадельфия с огурцом лайт',
+    img: '/images/honne-product-2.png',
+    price: '55',
+  },
+  {
+    id: 3,
+    title: 'хот-маки с окунем и сладким чили',
+    img: '/images/honne-product-3.png',
+    price: '24',
+  },
+  {
+    id: 4,
+    title: 'ролл с опаленным тунцом тартар',
+    img: '/images/honne-product-4.png',
+    price: '48',
+  },
+];
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <>
+      <Stories data={stories} />
+      <Popular data={products} />
+    </>
   );
 }
