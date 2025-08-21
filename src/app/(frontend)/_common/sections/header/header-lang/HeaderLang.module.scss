@@ -1,0 +1,60 @@
+.root {
+  position: relative;
+
+  cursor: pointer;
+}
+.toggle {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  gap: 0.4rem;
+  transition: $transition;
+  &__open,
+  &:hover {
+    color: $color-orange;
+  }
+}
+
+.list {
+  position: absolute;
+  top: 100%;
+  right: -1px;
+  width: 300%;
+  padding: 0.8rem 3.8rem 0.8rem 1.6rem;
+  box-shadow: 0 4px 5px #adadad33;
+  background-color: $color-white;
+  z-index: 2;
+  li {
+    display: flex;
+    justify-content: center;
+    &:not(:last-child) {
+      margin-bottom: 0.8rem;
+    }
+    a {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 600;
+      font-size: 1.6rem;
+
+      img {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+}
+.inHeader {
+  display: none;
+}
+.inBurger {
+  display: block;
+}
+
+@media screen and (min-width: 1280px) {
+  .root {
+    display: block;
+  }
+}

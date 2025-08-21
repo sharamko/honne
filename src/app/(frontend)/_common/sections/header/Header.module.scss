@@ -1,0 +1,83 @@
+.root {
+  position: sticky;
+  top: -5.8rem;
+  padding-top: 1.6rem;
+  background-color: rgba(#fff, 0.7);
+  backdrop-filter: blur(5rem);
+  width: 100%;
+  z-index: 100;
+  margin-bottom: 0.8rem;
+}
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &_left {
+    display: flex;
+    align-items: center;
+  }
+
+  &_right {
+    display: none;
+  }
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.2rem;
+  padding-bottom: 0.8rem;
+}
+
+.burger {
+  width: 2.4rem;
+  height: 2.4rem;
+  background: transparent;
+  border: none;
+  margin-right: 1.6rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+@include breakpoint-min(xl) {
+  .root {
+    top: -7rem;
+  }
+  .top {
+    padding-bottom: 1.8rem;
+    .divider {
+      display: none;
+    }
+
+    &_right {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+  }
+
+  .bottom {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .phone {
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: -0.03em;
+    transition: $transition;
+    &:hover {
+      color: $color-orange;
+    }
+  }
+
+  .burger {
+    display: none;
+  }
+}

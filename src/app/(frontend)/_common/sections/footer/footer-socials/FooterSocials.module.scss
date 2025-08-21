@@ -1,0 +1,26 @@
+.root {
+  margin-bottom: 5rem;
+  a {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #a3967c;
+    img {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+}
+
+@include breakpoint-min(xl) {
+  .root {
+    a {
+      transition: $transition;
+      &:hover {
+        color: $color-orange;
+      }
+    }
+  }
+}

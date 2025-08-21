@@ -1,0 +1,69 @@
+.root {
+}
+.slider {
+  overflow: visible;
+  width: 100%;
+}
+.slide {
+  position: relative;
+  width: 12.8rem;
+  height: 21rem;
+  border-radius: 8px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.title {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 1.2rem;
+  right: 1.2rem;
+  font-weight: 600;
+  line-height: 140%;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  letter-spacing: -3%;
+  color: $color-white;
+}
+
+@include breakpoint-min(md) {
+  .slide {
+    width: 20.15rem;
+    height: 33rem;
+    border-radius: 16px;
+  }
+  .title {
+    bottom: 1.6rem;
+    left: 1.6rem;
+    right: 1.6rem;
+    line-height: 120%;
+    font-size: 2rem;
+  }
+}
+@include breakpoint-min(xl) {
+  .slide {
+    width: 27.5rem;
+    height: 45rem;
+    border-radius: 24px;
+    cursor: pointer;
+    overflow: hidden;
+    img {
+      transition: $transition;
+    }
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+  .title {
+    bottom: 2.4rem;
+    left: 2.4rem;
+    right: 2.4rem;
+    font-size: 2.8rem;
+  }
+}

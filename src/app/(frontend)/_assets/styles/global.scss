@@ -1,0 +1,85 @@
+@import 'scss-reset/reset';
+@import 'rem';
+@import 'fonts';
+@import 'animations';
+
+:root {
+  font-family: $font-family;
+  line-height: 1.5;
+  --container-max-width: 144rem;
+  --container-padding: 1.6rem;
+  --container-padding-negative: -1.6rem;
+
+  @include breakpoint-min(lg) {
+    --container-padding: 2rem;
+    --container-padding-negative: -2rem;
+  }
+
+  @include breakpoint-min(xl) {
+    --container-padding: 0;
+    --container-padding-negative: 0;
+  }
+}
+
+body {
+  font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  background-color: $color-white;
+  color: $color-main;
+  scroll-margin-block: 8rem;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+main {
+  overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+  color: inherit;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-margin-top: 10rem;
+}
+
+img,
+video,
+svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+a {
+  text-decoration: none;
+}
+.divider {
+  display: none;
+}
+
+section {
+  margin-bottom: 4.8rem;
+}
+@include breakpoint-min(lg) {
+  section {
+    margin-bottom: 5.6rem;
+  }
+}
+@include breakpoint-min(xl) {
+  section {
+    margin-bottom: 6.4rem;
+  }
+  .divider {
+    display: block;
+    border-bottom: 1px solid #f1f0ee;
+  }
+}

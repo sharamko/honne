@@ -1,0 +1,16 @@
+.container {
+  width: 100%;
+  max-width: var(--container-max-width, 144rem);
+  margin: 0 auto;
+  padding-left: var(--container-padding, 1.6rem);
+  padding-right: var(--container-padding, 1.6rem);
+
+  @include breakpoint-min(lg) {
+    padding-left: var(--container-padding, 2rem);
+    padding-right: var(--container-padding, 2rem);
+  }
+  @include breakpoint-min(xl) {
+    padding-left: var(--container-padding, 0);
+    padding-right: var(--container-padding, 0);
+  }
+}

@@ -1,0 +1,69 @@
+.root {
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2.4rem;
+}
+
+.address {
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: -3%;
+  text-transform: lowercase;
+  text-align: center;
+  margin-bottom: 4.8rem;
+  span {
+    color: #a3967c;
+  }
+}
+.copyright,
+.created {
+  display: block;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: -3%;
+  text-transform: lowercase;
+  text-align: center;
+  color: #a3967c;
+  a {
+    color: $color-main;
+    text-decoration: underline;
+  }
+}
+.copyright {
+  margin-bottom: 1.6rem;
+}
+
+@include breakpoint-min(xl) {
+  .root {
+  }
+  .address {
+    margin-bottom: 0;
+    order: 3;
+  }
+  .bottom {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 4.8rem;
+  }
+  .copyright {
+    order: 1;
+    margin-bottom: 0;
+    margin-right: auto;
+  }
+  .created {
+    order: 4;
+    margin-left: auto;
+    a {
+      transition: $transition;
+      &:hover {
+        color: $color-orange;
+      }
+    }
+  }
+}

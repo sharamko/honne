@@ -1,0 +1,73 @@
+.root {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.4rem;
+  div {
+    font-weight: 500;
+    display: none;
+  }
+
+  img {
+    width: 7.8rem;
+    height: 2rem;
+    object-fit: contain;
+  }
+}
+
+.inFooter {
+  margin-right: 0;
+  margin-bottom: 52px;
+  div {
+    display: block;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    font-weight: 500;
+    height: 3rem;
+  }
+  img {
+    width: 12.5rem;
+    height: 3.4rem;
+    object-fit: contain;
+  }
+}
+
+@include breakpoint-min(md) {
+  .root {
+    margin-right: 8rem;
+
+    img {
+      width: 10rem;
+      height: auto;
+      object-fit: contain;
+    }
+    div {
+      display: block;
+      font-size: 1.2rem;
+      line-height: 1.4;
+      font-weight: 500;
+      height: 3rem;
+    }
+  }
+  .inFooter {
+    margin-right: 0;
+  }
+}
+
+@include breakpoint-min(xl) {
+  .root {
+    margin-right: 14.4rem;
+
+    img {
+      width: 12.5rem;
+      height: 3.4rem;
+    }
+
+    div {
+      font-size: 1.4rem;
+      line-height: 1.2;
+    }
+  }
+  .inFooter {
+    margin-right: 0;
+  }
+}

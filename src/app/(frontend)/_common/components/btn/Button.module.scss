@@ -1,0 +1,48 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  cursor: pointer;
+  transition: $transition;
+}
+
+.primary {
+  background-color: $color-main;
+  border-radius: 8px;
+  color: $color-yellow-light;
+  &:hover {
+    background-color: $color-black;
+  }
+}
+.secondary {
+  background-color: transparent;
+  border-radius: 8px;
+  border: 1px solid $color-main;
+  &:hover {
+    background-color: $color-main;
+    color: $color-yellow-light;
+  }
+}
+.tertiary {
+  background-color: $color-orange;
+  border-radius: 12px;
+  color: $color-yellow-light;
+  @include breakpoint-min(md) {
+    border-radius: 16px;
+  }
+  &:hover {
+    background-color: $color-orange-hover;
+  }
+}
+
+.primary,
+.secondary,
+.tertiary {
+  &:disabled {
+    background-color: #f6f5f2 !important;
+    color: #d5cfc3 !important;
+    border: none !important;
+    cursor: not-allowed !important;
+  }
+}

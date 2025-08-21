@@ -1,0 +1,75 @@
+.root {
+}
+.title {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 100%;
+  letter-spacing: -3%;
+  text-transform: lowercase;
+  margin-bottom: 2.4rem;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem 1rem;
+}
+.item {
+  width: calc(50% - 0.5rem);
+  overflow: hidden;
+  border-radius: 16px;
+}
+@include breakpoint-max(lg) {
+  .desserts {
+    .container {
+      padding: 0;
+    }
+    .title {
+      padding-left: 1.6rem;
+    }
+    .list {
+      background-image: url('/images/card-bg.png');
+      background-size: 50%;
+      background-repeat: repeat;
+      background-position: center;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+  }
+}
+
+@include breakpoint-min(md) {
+  .root {
+  }
+  .title {
+    font-size: 3.2rem;
+  }
+  .drinks {
+    .item {
+      width: calc(33.33% - 0.7rem);
+    }
+  }
+}
+@include breakpoint-min(lg) {
+  .root {
+  }
+  .item {
+    width: calc(33.33% - 0.7rem);
+  }
+  .drinks {
+    .item {
+      width: calc(25% - 0.8rem);
+    }
+  }
+}
+@include breakpoint-min(xl) {
+  .root {
+  }
+  .item {
+    width: calc(25% - 0.8rem);
+  }
+  .drinks {
+    .item {
+      width: calc(16.66% - 1rem);
+    }
+  }
+}

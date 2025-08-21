@@ -1,0 +1,58 @@
+.root {
+  padding-bottom: 3.2rem;
+  border-bottom: 1px solid #f1f0ee;
+}
+.title {
+  font-weight: 600;
+  font-size: 3.2rem;
+  line-height: 100%;
+  letter-spacing: -3%;
+  color: $color-main;
+  margin-bottom: 2.4rem;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 400rem;
+  padding: 1.3rem;
+  border: none;
+  background-color: $color-yellow-light;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 100%;
+  letter-spacing: -3%;
+  img {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+
+.groups {
+  display: none;
+  margin-top: 1.6rem;
+}
+
+@include breakpoint-min(md) {
+  .btn {
+    display: none;
+  }
+  .groups {
+    display: flex;
+    gap: 3.2rem;
+    flex-wrap: wrap;
+  }
+}
+
+@include breakpoint-min(xl) {
+  .root {
+    padding-bottom: 5.6rem;
+  }
+  .title {
+    font-size: 6.4rem;
+    margin-bottom: 3.2rem;
+  }
+}
