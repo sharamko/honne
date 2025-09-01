@@ -1,8 +1,8 @@
 import Popular from '@/app/(frontend)/_common/sections/popular/Popular';
 import Stories from '@/app/(frontend)/_common/sections/stories/Stories';
-import Delivery from './_common/sections/delivery/Delivery';
-import Filters from './_common/sections/filters/Filters';
-import Products from './_common/sections/products/Products';
+import Delivery from '@/app/(frontend)/_common/sections/delivery/Delivery';
+import Filters from '@/app/(frontend)/_common/sections/filters/Filters';
+import Products from '@/app/(frontend)/_common/sections/products/Products';
 
 export type Story = {
   id: number;

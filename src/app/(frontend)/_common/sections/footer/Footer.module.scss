@@ -60,7 +60,7 @@
     order: 4;
     margin-left: auto;
     a {
-      transition: $transition;
+      transition: color $transition;
       &:hover {
         color: $color-orange;
       }

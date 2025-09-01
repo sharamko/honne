@@ -71,7 +71,7 @@
     font-weight: 700;
     font-size: 1.6rem;
     letter-spacing: -0.03em;
-    transition: $transition;
+    transition: color $transition;
     &:hover {
       color: $color-orange;
     }

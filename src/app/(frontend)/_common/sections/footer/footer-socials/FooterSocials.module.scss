@@ -17,7 +17,7 @@
 @include breakpoint-min(xl) {
   .root {
     a {
-      transition: $transition;
+      transition: color $transition;
       &:hover {
         color: $color-orange;
       }

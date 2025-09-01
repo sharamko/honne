@@ -37,7 +37,7 @@
           background-color: transparent;
           font-size: 2.4rem;
           font-weight: 600;
-          transition: $transition;
+          transition: color $transition;
           &:hover {
             color: $color-orange;
           }

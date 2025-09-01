@@ -52,7 +52,7 @@
     cursor: pointer;
     overflow: hidden;
     img {
-      transition: $transition;
+      transition: transform $transition;
     }
     &:hover {
       img {

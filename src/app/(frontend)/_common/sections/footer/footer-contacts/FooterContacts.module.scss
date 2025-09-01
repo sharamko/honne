@@ -39,7 +39,7 @@
       gap: 5rem;
       li {
         a {
-          transition: $transition;
+          transition: color $transition;
           &:hover {
             color: $color-orange;
           }

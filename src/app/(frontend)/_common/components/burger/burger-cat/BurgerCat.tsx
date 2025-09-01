@@ -12,7 +12,7 @@ const BurgerCat = ({ catItems, close }: BurgerCatProps) => {
     <ul className={styles.root}>
       {catItems.map((item) => (
         <li key={item.title}>
-          <Link onClick={() => close()} href={item.url || '#'}>
+          <Link onClick={() => close()} href={`/#${item.title}`}>
             {item.title}
           </Link>
         </li>

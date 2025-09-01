@@ -1,5 +1,6 @@
 import { NavItem } from '@/app/(frontend)/layout';
 import styles from './HeaderCategories.module.scss';
+import Link from 'next/link';
 
 const HeaderCategories = ({ data }: { data: NavItem[] }) => {
   return (
@@ -7,7 +8,7 @@ const HeaderCategories = ({ data }: { data: NavItem[] }) => {
       <ul>
         {data.map((item) => (
           <li key={item.title}>
-            <a href={`/#${item.title}`}>{item.title}</a>
+            <Link href={`/#${item.title}`}>{item.title}</Link>
           </li>
         ))}
       </ul>

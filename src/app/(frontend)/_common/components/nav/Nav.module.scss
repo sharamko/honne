@@ -41,7 +41,7 @@
         a {
           font-size: 1.6rem;
           font-weight: 500;
-          transition: $transition;
+          transition: color $transition;
           &:hover {
             color: $color-orange;
           }

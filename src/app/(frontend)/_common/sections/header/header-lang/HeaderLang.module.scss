@@ -9,7 +9,7 @@
   font-size: 1.6rem;
   font-weight: 700;
   gap: 0.4rem;
-  transition: $transition;
+  transition: color $transition;
   &__open,
   &:hover {
     color: $color-orange;

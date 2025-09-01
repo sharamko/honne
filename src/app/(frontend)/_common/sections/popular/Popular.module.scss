@@ -185,7 +185,7 @@
     font-weight: 600;
     text-align: left;
     margin-bottom: 1.6rem;
-    transition: $transition;
+    transition: color $transition;
     &:hover {
       color: $color-orange;
     }

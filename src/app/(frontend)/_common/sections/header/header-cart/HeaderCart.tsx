@@ -13,7 +13,7 @@ const HeaderCart = ({ type }: { type: 'top' | 'bottom' }) => {
       } ${total > 0 ? styles.root__active : ''}`}
     >
       {total > 0 && <span className={styles.total}>138.85 zł</span>}
-      <Link href={'#'}>
+      <Link href={'/cart'}>
         <CartIcon /> Корзина
         {total > 0 && <span>{total}</span>}
       </Link>
