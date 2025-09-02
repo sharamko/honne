@@ -1,4 +1,4 @@
-import Popular from '@/app/(frontend)/_common/sections/popular/Popular';
+import ProductsSlider from '@/app/(frontend)/_common/sections/productsSlider/ProductsSlider';
 import Stories from '@/app/(frontend)/_common/sections/stories/Stories';
 import Delivery from '@/app/(frontend)/_common/sections/delivery/Delivery';
 import Filters from '@/app/(frontend)/_common/sections/filters/Filters';
@@ -174,7 +174,7 @@ const rolls: Product[] = [
       'креветка в темпуре / сливочный сыр со сладким соусом чили / сушеный жареный лук / сладкий соус чили',
   },
 ];
-const sets: Product[] = [
+export const sets: Product[] = [
   {
     id: 1,
     title: 'сет №5',
@@ -454,7 +454,11 @@ export default function Home() {
   return (
     <>
       <Stories data={stories} />
-      <Popular data={products} />
+      <ProductsSlider
+        data={products}
+        title="популярные позиции"
+        variant="popular"
+      />
       <Filters />
       <Products title="Роллы" data={rolls} />
       <Products title="Сеты" data={sets} />

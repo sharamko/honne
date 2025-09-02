@@ -6,27 +6,21 @@ import { Navigation } from 'swiper/modules';
 import { NavigationOptions } from 'swiper/types';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import Image from 'next/image';
 import { Product } from '@/app/(frontend)/page';
-import styles from './Popular.module.scss';
+import styles from './ProductsSlider.module.scss';
 import ArrowIcon from '@/app/(frontend)/_common/components/svg-icons/ArrowIcon';
-import { useCartStore } from '@/app/(frontend)/store/cart';
-import Link from 'next/link';
+
 import Container from '../../container/container';
-import MinusIcon from '../../components/svg-icons/MinusIcon';
-import PlusIcon from '../../components/svg-icons/PlusIcon';
+import ProductsCard from '../../components/products-card/ProductsCard';
+import ProductsCardPopular from './products-card-popular/ProductsCardPopular';
 
-type QtyMap = Record<number, number> & Record<string, number>;
+type ProductsSliderProps = {
+  data: Product[];
+  variant: 'popular' | 'recommended';
+  title: string;
+};
 
-const Popular = ({ data }: { data: Product[] }) => {
-  const inc = useCartStore((s) => s.inc);
-  const dec = useCartStore((s) => s.dec);
-  const qtyMap = useCartStore((s) => s.qty) as QtyMap;
-
-  const getQty = (id: number) => {
-    return qtyMap[id] ?? qtyMap[String(id)] ?? 0;
-  };
-
+const ProductsSlider = ({ data, variant, title }: ProductsSliderProps) => {
   const swiperRef = useRef<SwiperRef | null>(null);
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
@@ -54,7 +48,7 @@ const Popular = ({ data }: { data: Product[] }) => {
     <section className={styles.root}>
       <Container className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>популярные позиции</h2>
+          <h2 className={styles.title}>{title}</h2>
           <div className={styles.nav}>
             <button ref={prevRef} className={styles.prev} aria-label="Prev">
               <ArrowIcon />
@@ -75,35 +69,15 @@ const Popular = ({ data }: { data: Product[] }) => {
           className={styles.slider}
         >
           {data.map((p) => (
-            <SwiperSlide className={styles.slide} key={p.id}>
-              <div className={styles.img}>
-                <Image src={p.img} alt={p.title} width={100} height={100} />
-              </div>
-              <div className={styles.info}>
-                <Link href="#" className={styles.product_title}>
-                  {p.title}
-                </Link>
-                <div className={styles.price}>{p.price} zł</div>
-              </div>
-              <div className={styles.qty}>
-                <button
-                  type="button"
-                  className={`${styles.qty_btn} ${styles.qty_btn_minus}`}
-                  onClick={() => dec(p.id)}
-                  aria-label="minus"
-                >
-                  <MinusIcon />
-                </button>
-                <span className={styles.qty_count}>{getQty(p.id)}</span>
-                <button
-                  type="button"
-                  className={`${styles.qty_btn} ${styles.qty_btn_plus}`}
-                  onClick={() => inc(p.id)}
-                  aria-label="plus"
-                >
-                  <PlusIcon />
-                </button>
-              </div>
+            <SwiperSlide
+              className={`${styles.slide} ${styles[variant]}`}
+              key={p.id}
+            >
+              {variant === 'popular' ? (
+                <ProductsCardPopular data={p} />
+              ) : (
+                <ProductsCard variant="inCart" data={p} />
+              )}
             </SwiperSlide>
           ))}
         </Swiper>
@@ -112,4 +86,4 @@ const Popular = ({ data }: { data: Product[] }) => {
   );
 };
 
-export default Popular;
+export default ProductsSlider;
