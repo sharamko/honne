@@ -1,0 +1,125 @@
+.root {
+}
+.container {
+  padding-bottom: 4.8rem;
+  border-bottom: 1px solid #ff8e2433;
+}
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 2.4rem;
+  span {
+    font-family: $font-family-second;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 150%;
+    color: #425f48;
+  }
+}
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  align-items: flex-end;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 133%;
+}
+
+.total {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  span {
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 1.1;
+  }
+  b {
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 1;
+  }
+}
+.btn {
+  width: 100%;
+  max-width: 400rem;
+  padding: 1.6rem;
+  font-weight: 800;
+  font-size: 2.4rem;
+  line-height: 130%;
+  text-transform: uppercase;
+}
+
+@include breakpoint-min(md) {
+  .root {
+  }
+  .title {
+    font-size: 3.2rem;
+  }
+  .top {
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
+    span {
+      font-weight: 600;
+      font-size: 1.6rem;
+    }
+  }
+  .bottom {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn {
+    padding: 1.6rem 5rem;
+    max-width: max-content;
+  }
+  .total {
+    span {
+      font-size: 2rem;
+    }
+    b {
+      font-size: 3rem;
+    }
+  }
+}
+
+@include breakpoint-min(xl) {
+  .root {
+  }
+  .container {
+    padding-bottom: 5.6rem;
+  }
+  .title {
+    font-size: 6.4rem;
+  }
+  .top {
+    margin-bottom: 5.6rem;
+    span {
+      font-size: 2.4rem;
+      line-height: 200%;
+    }
+  }
+
+  .btn {
+    padding: 1.6rem 2.4rem;
+    font-size: 3.2rem;
+    line-height: 125%;
+  }
+  .total {
+    span {
+      display: inline-block;
+      padding-bottom: 0.1rem;
+      font-size: 2.4rem;
+    }
+    b {
+      font-size: 4rem;
+    }
+  }
+}
