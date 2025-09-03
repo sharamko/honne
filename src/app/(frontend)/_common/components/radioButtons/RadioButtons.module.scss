@@ -1,0 +1,37 @@
+.root {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  width: calc(50% - 0.4rem);
+  padding: 0.8rem;
+  height: 5rem;
+  border: none;
+  border-radius: 0.8rem;
+  background: $color-yellow-light;
+  font-size: 1.4rem;
+  color: $color-main;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: lowercase;
+  transition: $transition;
+
+  &:hover {
+    border-color: #888;
+  }
+}
+
+.active {
+  background: $color-main;
+  color: $color-white;
+}
+
+@include breakpoint-min(md) {
+  .button {
+    width: calc(33% - 0.55rem);
+    font-size: 1.6rem;
+  }
+}

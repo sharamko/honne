@@ -29,9 +29,6 @@ body {
   background-color: $color-white;
   color: $color-main;
   scroll-margin-block: 8rem;
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 main {
@@ -48,6 +45,9 @@ main {
   scroll-behavior: smooth;
   scroll-margin-top: 10rem;
   -webkit-tap-highlight-color: transparent;
+}
+*::-webkit-scrollbar {
+  display: none;
 }
 
 img,

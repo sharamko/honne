@@ -1,0 +1,46 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 2px solid #a3967c;
+  border-radius: 0.4rem;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+
+  &:checked {
+    background-color: #a3967c;
+    border-color: #a3967c;
+  }
+
+  &:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    font-size: 2rem;
+    color: #fff;
+  }
+}
+
+.label {
+  font-family: $font-family-second;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  letter-spacing: -3%;
+  color: $color-main;
+  text-transform: lowercase;
+  cursor: pointer;
+}

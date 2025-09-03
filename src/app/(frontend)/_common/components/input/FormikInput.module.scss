@@ -1,0 +1,142 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.label {
+  font-family: $font-family-second;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 100%;
+}
+
+.required {
+  color: #d95b4f;
+  margin-left: 4px;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #a3967c;
+  border-radius: 4px;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.6rem;
+  outline: none;
+  transition: $transition;
+  height: 6.2rem;
+  padding: 1.6rem;
+  font-weight: 600;
+
+  &:focus {
+    outline: 1px solid $color-main;
+    border-color: $color-main;
+  }
+
+  &:hover:not(:disabled) {
+    border-color: $color-main;
+  }
+
+  &:disabled {
+    background-color: #f3f4f6;
+    cursor: not-allowed;
+    color: #9ca3af;
+  }
+  &::placeholder {
+    color: #a3967c;
+  }
+}
+
+.textarea {
+  composes: input;
+  resize: none;
+  height: 18.6rem;
+}
+
+.errorBorder {
+  border-color: #d95b4f !important;
+}
+
+.filled {
+  border-color: #a3967c;
+}
+
+.error {
+  position: absolute;
+  top: 8.3rem;
+  left: 0;
+  font-size: 1.2rem;
+  color: #d95b4f;
+  z-index: 1;
+}
+
+.description {
+  font-size: 1.4rem;
+  line-height: 100%;
+  font-family: $font-family-second;
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-top: 0.8rem;
+}
+.descriptionInline {
+  font-size: 1.4rem;
+  line-height: 100%;
+  color: #a3967c;
+  display: none;
+}
+
+.descriptionMobile {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #a3967c;
+  display: block;
+}
+.promo {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 1.9rem;
+    right: 1.6rem;
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  &__ok {
+    &::before {
+      background: url('/images/Check-promo.svg') no-repeat center;
+      background-size: contain;
+    }
+  }
+  &__error {
+    &::before {
+      background: url('/images/Close_SM.svg') no-repeat center;
+      background-size: contain;
+    }
+  }
+}
+
+@include breakpoint-min(md) {
+  .input {
+    font-size: 2.4rem;
+  }
+  .descriptionInline {
+    display: block;
+  }
+  .textarea {
+    height: 12.4rem;
+  }
+  .descriptionMobile {
+    display: none;
+  }
+  .error {
+    top: 8.5rem;
+  }
+}

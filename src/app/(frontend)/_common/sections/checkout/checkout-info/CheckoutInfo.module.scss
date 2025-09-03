@@ -1,0 +1,51 @@
+.root {
+  width: 100%;
+  max-width: 46.4rem;
+  margin: 0 auto;
+}
+.cart,
+.discount,
+.total {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  &:not(:last-child) {
+    margin-bottom: 1.2rem;
+  }
+  span {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+}
+.total {
+  span {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+}
+
+@include breakpoint-min(md) {
+  .root {
+  }
+  .cart,
+  .discount,
+  .total {
+    &:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+    span {
+      font-size: 2rem;
+    }
+  }
+}
+.total {
+  span {
+    font-size: 2.4rem;
+  }
+}
+
+@include breakpoint-min(xl) {
+  .root {
+  }
+}

@@ -9,7 +9,7 @@ const CheckoutSection = ({ title, children }: CheckoutSectionProps) => {
   return (
     <div className={styles.root}>
       <h3 className={styles.title}>{title}</h3>
-      {children}
+      <div className={styles.group}>{children}</div>
     </div>
   );
 };

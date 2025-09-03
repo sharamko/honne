@@ -1,0 +1,17 @@
+.address {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  & > div {
+    width: calc(50% - 0.8rem);
+  }
+}
+
+@include breakpoint-min(xl) {
+  .address {
+    flex-wrap: nowrap;
+    & > div {
+      width: calc(25% - 1.2rem);
+    }
+  }
+}
