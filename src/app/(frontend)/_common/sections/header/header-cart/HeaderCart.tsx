@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
 import styles from './HeaderCart.module.scss';
-import Image from 'next/image';
 import { selectTotalCount, useCartStore } from '@/app/(frontend)/store/cart';
 import CartIcon from '../../../components/svg-icons/CartIcon';
 const HeaderCart = ({ type }: { type: 'top' | 'bottom' }) => {

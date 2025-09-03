@@ -31,7 +31,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
   disabled = false,
 }) => {
   const [field, helpers] = useField(name);
-  const { setFieldValue } = useFormikContext<any>();
+  const { setFieldValue } = useFormikContext();
 
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement | null>(null);

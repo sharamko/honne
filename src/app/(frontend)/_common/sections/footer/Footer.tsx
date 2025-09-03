@@ -5,7 +5,6 @@ import Logo from '../../components/logo/Logo';
 import Nav from '../../components/nav/Nav';
 import FooterContacts from './footer-contacts/FooterContacts';
 import Link from 'next/link';
-import Image from 'next/image';
 import FooterSocials from './footer-socials/FooterSocials';
 import FooterPayment from './footer-payment/FooterPayment';
 

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import HeaderLang from '../../sections/header/header-lang/HeaderLang';
 import Nav from '../nav/Nav';
 import CloseIcon from '../svg-icons/CloseIcon';

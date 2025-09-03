@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import styles from './QtyBtns.module.scss';
 import MinusIcon from '../../svg-icons/MinusIcon';
 import PlusIcon from '../../svg-icons/PlusIcon';
