@@ -1,4 +1,5 @@
 import SuccessSection from '@/app/(frontend)/_common/sections/success/Success';
+import ChangeBg from '../../_common/components/change-bg/ChangeBg';
 
 export type OrderDataType = {
   orderId: number;
@@ -19,5 +20,10 @@ const orderData: OrderDataType = {
 };
 
 export default function Success() {
-  return <SuccessSection orderData={orderData} />;
+  return (
+    <>
+      <ChangeBg />
+      <SuccessSection orderData={orderData} />;
+    </>
+  );
 }

@@ -341,7 +341,7 @@ const desserts: Product[] = [
       'десерт на основе свежих сливок и нежного сыра, с легкой ноткой лимона и ароматом ванили',
   },
 ];
-const drinks: Product[] = [
+export const drinks: Product[] = [
   {
     id: 1,
     title: 'sprite',

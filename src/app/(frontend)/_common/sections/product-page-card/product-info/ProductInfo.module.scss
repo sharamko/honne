@@ -1,0 +1,43 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.name,
+.value {
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-family: $font-family-second;
+  color: #b7a685;
+}
+.value {
+  color: $color-main;
+  line-height: 1.2;
+}
+
+@include breakpoint-min(lg) {
+  .root {
+    order: 2;
+  }
+}
+
+@include breakpoint-min(xl) {
+  .root {
+    gap: 2.4rem;
+  }
+  .item {
+    flex-direction: row;
+  }
+  .name {
+    width: 30%;
+    flex-shrink: 0;
+  }
+  .value {
+    flex-grow: 1;
+  }
+}

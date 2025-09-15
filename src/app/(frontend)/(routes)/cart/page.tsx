@@ -39,7 +39,7 @@ const cartItems: CartItemType[] = [
   },
 ];
 
-export default function Home() {
+export default function Cart() {
   return (
     <>
       <CartList cartItems={cartItems} />

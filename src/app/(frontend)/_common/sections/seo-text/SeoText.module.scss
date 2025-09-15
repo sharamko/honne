@@ -1,0 +1,24 @@
+.root {
+}
+.title {
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 133%;
+  margin-bottom: 1.6rem;
+}
+.text {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 125%;
+  font-family: $font-family-second;
+}
+
+@include breakpoint-min(md) {
+  .root {
+  }
+}
+
+@include breakpoint-min(xl) {
+  .root {
+  }
+}

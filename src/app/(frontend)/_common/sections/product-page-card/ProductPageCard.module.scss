@@ -1,0 +1,146 @@
+.root {
+  background: url('/images/productpage-bg.webp') no-repeat center;
+  background-size: cover;
+  padding-top: 2.4rem;
+}
+.container {
+}
+.topRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  padding-bottom: 3.2rem;
+  border-bottom: 1px solid #ff8e2433;
+}
+.img {
+  position: relative;
+  width: 27rem;
+  height: 27rem;
+  flex-shrink: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.badge {
+  position: absolute;
+  top: -3.5rem;
+  left: -3.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.new,
+.discount,
+.vegan {
+  width: max-content;
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  color: $color-white;
+  font-family: $font-family-second;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 100%;
+}
+.new {
+  background-color: #344f44;
+  order: 2;
+}
+.discount {
+  background-color: #d95b4f;
+  order: 3;
+}
+
+.vegan {
+  background-color: #f2c165;
+  color: $color-main;
+  order: 1;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+}
+.title {
+  font-family: $font-family-second;
+  font-weight: 600;
+  font-size: 3.2rem;
+  line-height: 120%;
+  color: $color-main;
+  text-align: center;
+}
+.priceRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+.price {
+  font-size: 3.2rem;
+  line-height: 4.2rem;
+  font-weight: 600;
+  color: $color-main;
+}
+
+@include breakpoint-min(lg) {
+  .root {
+  }
+  .content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10rem;
+    padding-bottom: 12rem;
+  }
+  .img {
+    width: 43.6rem;
+    height: 43.6rem;
+    padding-left: 7.4rem;
+  }
+  .badge {
+    top: 0;
+    left: 0;
+  }
+  .info {
+    align-items: flex-start;
+    padding-top: 4rem;
+  }
+  .title {
+    text-align: left;
+    order: 1;
+  }
+  .priceRow {
+    flex-direction: row;
+    gap: 5rem;
+    order: 3;
+  }
+  .price {
+    font-size: 3.2rem;
+    line-height: 4.2rem;
+    font-weight: 600;
+    color: $color-main;
+  }
+}
+@include breakpoint-min(xl) {
+  .root {
+  }
+  .img {
+    width: 51rem;
+    height: 43.6rem;
+    padding-left: 7.4rem;
+  }
+  .topRow {
+    margin-bottom: 0;
+  }
+  .title {
+    font-size: 6.4rem;
+  }
+}

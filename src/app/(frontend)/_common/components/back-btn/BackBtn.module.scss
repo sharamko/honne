@@ -1,0 +1,33 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    & path {
+      stroke: #b7a685;
+    }
+  }
+}
+.text {
+  transition: color $transition;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: $color-main;
+}
+
+@include breakpoint-min(md) {
+  .root {
+  }
+}
+
+@include breakpoint-min(xl) {
+  .root {
+    &:hover {
+      .text {
+        color: $color-orange;
+      }
+    }
+  }
+}
